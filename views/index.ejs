@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+    <title>SESP</title>
+  </head>
+  <body>
+    <header>
+      <h1>Self-Evaluation Student Performance</h1>
+      <p>
+        A decision support system to analyze and improve your academic
+        performance.
+      </p>
+    </header>
+    <main>
+      <div class="server-msg">
+        <% if(hasErr){%> <% errMsg.forEach(message =>{ %>
+        <p class="has-error"><%= message%></p>
+        <% })%> <% } %> <% if(hasSuccess){%> <% successMsg.forEach(message =>{
+        %>
+        <p class="has-success"><%= message%></p>
+        <% })%> <% } %>
+      </div>
+      <div class="login">
+        <p>login as an existing user</p>
+        <form action="/student/login" method="post">
+          <input type="email" placeholder="email" name="email" />
+          <input type="password" placeholder="password" name="password" />
+          <input type="submit" value="Login" />
+        </form>
+      </div>
+      <div class="signup">
+        <p>signup an a new user</p>
+        <form action="/student/create" method="post">
+          <input type="text" placeholder="fullname" name="fullname" />
+          <input type="email" placeholder="email" name="email" />
+          <input type="password" placeholder="password" name="password" />
+          <input type="text" placeholder="department" name="department" />
+          <input type="number" placeholder="Year" name="year" />
+          <input type="submit" value="signup" />
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/myevaluation.css" />
+    <title>SESP</title>
+  </head>
+  <body>
+    <header>
+      <h1>Self-Evaluation Student Performance</h1>
+    </header>
+    <main>
+      <% if(hasEvaluation){ %> <% myevaluation.forEach(eva =>{ %>
+      <div class="evaluation-container">
+        <p>academicPerformance: <%= eva.academicPerformance %></p>
+        <p>classPaticipation: <%= eva.classPaticipation %></p>
+        <p>goals: <%= eva.goals %></p>
+        <p>comments: <%= eva.comments %></p>
+        <p>date: <%= eva.date %></p>
+      </div>
+      <% })%> <%}else{%>
+      <div class="no-evaluation">
+        <p>you don't have any created evaluation</p>
+      </div>
+      <%}%>
+      <a href="/student/homepage"
+        ><i class="fa fa-arrow-left" aria-hidden="true"></i> home</a
+      >
+    </main>
+  </body>
+</html>

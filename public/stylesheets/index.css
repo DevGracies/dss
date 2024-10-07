@@ -1,0 +1,167 @@
+/* index.css */
+
+/* ================================
+   Global Styles
+================================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f0f4f8;
+  color: #2e2e2e;
+  margin: 0;
+  padding: 0;
+}
+
+/* ================================
+     Header Styles
+  ================================================ */
+header {
+  text-align: center;
+  padding: 50px;
+  background: #1abc9c;
+  color: white;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+header p {
+  font-size: 1.1rem;
+  color: #ffffff;
+}
+
+/* ================================
+     Server Message Styles
+  ================================================ */
+.server-msg {
+  padding: 15px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.server-msg p {
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+/* Error message styles */
+.has-error {
+  background-color: #fdecea;
+  border: 1px solid #e74c3c;
+  color: #c0392b;
+}
+main {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+/* Success message styles */
+.has-success {
+  background-color: #eafaf1;
+  border: 1px solid #2ecc71;
+  color: #27ae60;
+}
+
+/* ================================
+     Form Container Styles
+  ================================================ */
+.login,
+.signup {
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.login p,
+.signup p {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  color: #2e4053;
+}
+
+/* ================================
+     Form Styles
+  ================================================ */
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form input[type="number"] {
+  padding: 10px 15px;
+  margin-bottom: 15px;
+  border: 1px solid #abb2b9;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="password"]:focus,
+form input[type="number"]:focus {
+  border-color: #1abc9c;
+  outline: none;
+  box-shadow: 0 0 5px rgba(26, 188, 156, 0.5);
+}
+
+form input[type="submit"] {
+  padding: 10px 15px;
+  background-color: #1abc9c;
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #16a085;
+}
+
+/* ================================
+     Responsive Design
+  ================================================ */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 2rem;
+  }
+
+  header p {
+    font-size: 1rem;
+  }
+
+  .login,
+  .signup {
+    padding: 20px;
+  }
+
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="password"],
+  form input[type="number"],
+  form input[type="submit"] {
+    font-size: 0.9rem;
+  }
+}

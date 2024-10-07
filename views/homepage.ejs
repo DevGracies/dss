@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/homepage.css" />
+    <title>SESP</title>
+  </head>
+  <body>
+    <header>
+      <h1>Self-Evaluation Student Performance</h1>
+    </header>
+    <div class="server-msg">
+      <% if(hasErr){%> <% errMsg.forEach(message =>{ %>
+      <p class="has-error"><%= message%></p>
+      <% })%> <% } %> <% if(hasSuccess){%> <% successMsg.forEach(message =>{ %>
+      <p class="has-success"><%= message%></p>
+      <% })%> <% } %>
+    </div>
+    <main class="main">
+      <h2>welcome back <%= user.fullname %></h2>
+      <a href="/evaluation/myevaluation/<%= user._id %>">check my evaluation</a>
+      <a href="/performance/myperformance/<%= user._id %>">
+        check my performance</a
+      >
+      <div class="create-evaluation">
+        <p>create evaluation</p>
+        <form action="/evaluation/create" method="post">
+          <input
+            type="text"
+            name="academicPerformance"
+            placeholder="academic Performance"
+          />
+          <input
+            type="number"
+            name="classPaticipation"
+            placeholder="class Paticipation"
+          />
+          <input type="text" name="goals" placeholder="goals" />
+          <input type="text" name="comments" placeholder="comments" />
+          <input type="submit" value="create evaluation" />
+        </form>
+      </div>
+      <div class="create-performance">
+        <p>create performance</p>
+        <form action="/performance/create" method="post">
+          <input type="text" name="course" placeholder="course" />
+          <input type="text" name="grade" placeholder="grade" />
+          <input type="number" name="attendance" placeholder="attendance" />
+          <input type="submit" value="create performance" />
+        </form>
+      </div>
+    </main>
+  </body>
+</html>

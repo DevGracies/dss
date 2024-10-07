@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="/stylesheets/myperformance.css" />
+    <title>SESP</title>
+  </head>
+  <body>
+    <header>
+      <h1>Self-Evaluation Student Performance</h1>
+    </header>
+    <main>
+      <% if(hasPerformance){ %> <% myPerformance.forEach(perform =>{ %>
+      <div class="performance-container">
+        <p>course: <%= perform.course %></p>
+        <p>grade: <%= perform.grade %></p>
+        <p>attendance: <%= perform.attendance %></p>
+        <p>date: <%= perform.date %></p>
+      </div>
+      <% })%> <%}else{%>
+      <div class="no-performance">
+        <p>you don't have any created performance</p>
+      </div>
+      <%}%>
+      <a href="/student/homepage"
+        ><i class="fa fa-arrow-left" aria-hidden="true"></i> home</a
+      >
+    </main>
+  </body>
+</html>
