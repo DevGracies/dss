@@ -17,6 +17,7 @@
       <p class="has-success"><%= message%></p>
       <% })%> <% } %>
     </div>
+
     <main class="main">
       <h2>welcome back <%= user.fullname %></h2>
       <a href="/evaluation/myevaluation/<%= user._id %>">check my evaluation</a>
@@ -45,7 +46,7 @@
         <p>create performance</p>
         <form action="/performance/create" method="post">
           <input type="text" name="course" placeholder="course" />
-          <input type="text" name="grade" placeholder="grade" />
+          <input type="number" name="score" placeholder="score" />
           <input type="number" name="attendance" placeholder="attendance" />
           <input type="submit" value="create performance" />
         </form>

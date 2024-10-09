@@ -16,6 +16,9 @@ const performanceSchema = new Schema({
     type: String,
     required: true,
   },
+  score: {
+    type: Number,
+  },
   attendance: {
     type: Number,
     required: true,

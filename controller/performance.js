@@ -1,16 +1,19 @@
 const Performance = require("../model/performance");
+const Tools = require("../config/tools");
 
 const createPerformance = async (req, res) => {
   let errMsg = [];
   let successMsg = [];
   try {
-    const { course, grade, attendance } = req.body;
+    const { course, score, attendance } = req.body;
     const date = Date.now();
     const studentId = req.user._id;
+    const grade = Tools.calculateGrade(score);
     const createdPerformance = await Performance.create({
       studentId,
       course,
       grade,
+      score,
       attendance,
       date,
     });
